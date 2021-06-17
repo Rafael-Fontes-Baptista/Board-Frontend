@@ -1,5 +1,11 @@
+import SandBoard from "./Pages/SandBoard";
+
 function App() {
-	return <div></div>;
+	return (
+		<div>
+			<SandBoard />
+		</div>
+	);
 }
 
 export default App;
