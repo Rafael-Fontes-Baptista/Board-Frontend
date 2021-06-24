@@ -1,12 +1,10 @@
 .formButton {
-	border-radius: 38px;
-	width: 76px;
-	height: 76px;
+	width: 75px;
+	height: 75px;
 	border: 0;
 	background-color: white;
-
 	padding: 0;
-	margin-right: 30px;
+	margin-left: -5vw;
 }
 
 .buttonFont {

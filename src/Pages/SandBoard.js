@@ -1,23 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { apiUrl } from "../Config/constants";
+import axios from "axios";
+import { motion, useMotionValue } from "framer-motion";
+
 import "./Style/SandBoard.css";
 
 import Title from "../Components/Title";
-import Menu from "../Components/Menu";
-import AddPebbleButton from "../Components/AddPebbleButton";
-import axios from "axios";
+import AddPebbleForm from "../Components/AddPebbleForm";
 
 export default function SandBoard() {
-	console.log(apiUrl);
+	const [pebbles, set_pebbles] = useState([]);
 
-	const [projects, set_projects] = useState([]);
+	const constraintsRef = useRef(null);
+	const titleDrag = useMotionValue(0);
+
+	console.log(titleDrag);
 
 	useEffect(() => {
-		const getProjects = async () => {
-			const res = await axios.get(`${apiUrl}`);
-			set_projects(res.data.projects);
+		const getPebbles = async () => {
+			const res = await axios.get(`${apiUrl}/board`);
+			set_pebbles(res.data.Pebbles);
 		};
-		getProjects();
+		getPebbles();
 	}, []);
 
 	return (
@@ -26,21 +30,51 @@ export default function SandBoard() {
 				<div className="Title">
 					<Title />
 				</div>
-				<div className="Menu">
-					<Menu />
-				</div>
 			</div>
 			<div className="hLine"></div>
-			<div className="Container">
-				<div>
-					{projects.map((i) => (
-						<li key={i.id}>{i.name}</li>
-					))}
-				</div>
+			<motion.div className="Container" ref={constraintsRef}>
+				{pebbles.map((i) => (
+					<div className="pebble" key={i.index}>
+						{i.title ? (
+							<motion.div
+								className="pebbleTitle"
+								drag
+								dragConstraints={constraintsRef}
+								style={{ titleDrag }}
+								dragElastic={0.9}
+								dragMomentum={false}
+							>
+								{i.title}
+							</motion.div>
+						) : null}
+						{i.text ? (
+							<motion.div
+								drag
+								dragConstraints={constraintsRef}
+								dragElastic={0.9}
+								dragMomentum={false}
+								className="pebbleText"
+							>
+								{i.text}
+							</motion.div>
+						) : null}
+						{i.imgUrl ? (
+							<motion.img
+								drag
+								dragConstraints={constraintsRef}
+								dragElastic={0.9}
+								dragMomentum={false}
+								className="pebbleImage"
+								src={i.imgUrl}
+								alt=""
+							/>
+						) : null}
+					</div>
+				))}
 				<div className="AddPebble">
-					<AddPebbleButton />
+					<AddPebbleForm />
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 }
