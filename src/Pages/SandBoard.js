@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { apiUrl } from "../../config/constants";
 import "./Style/SandBoard.css";
 
 import Title from "../Components/Title";
@@ -11,7 +12,7 @@ export default function SandBoard() {
 
 	useEffect(() => {
 		const getProjects = async () => {
-			const res = await axios.get("http://localhost:4000");
+			const res = await axios.get(`${apiUrl}`);
 			set_projects(res.data.projects);
 		};
 		getProjects();
