@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { apiUrl } from "../../config/constants";
+import { apiUrl } from "../Config/constants";
 import "./Style/SandBoard.css";
 
 import Title from "../Components/Title";
@@ -8,6 +8,8 @@ import AddPebbleButton from "../Components/AddPebbleButton";
 import axios from "axios";
 
 export default function SandBoard() {
+	console.log(apiUrl);
+
 	const [projects, set_projects] = useState([]);
 
 	useEffect(() => {
