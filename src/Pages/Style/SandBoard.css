@@ -1,0 +1,32 @@
+/* .Page {
+	background-color: #fffff0;
+} */
+
+.TopBar {
+	display: flex;
+	margin-bottom: 50px;
+}
+
+.Title {
+	margin-left: auto;
+}
+
+.Menu {
+	margin-left: auto;
+}
+
+.hLine {
+	width: 70%;
+	border-top: 2px solid black;
+	margin: auto;
+}
+
+.Container {
+	display: flex;
+	min-height: 600px;
+}
+.AddPebble {
+	display: flex;
+	margin-top: auto;
+	margin-left: auto;
+}
