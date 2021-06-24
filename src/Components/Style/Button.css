@@ -1,0 +1,23 @@
+.formButton {
+	border-radius: 38px;
+	width: 76px;
+	height: 76px;
+	border: 0;
+	background-color: white;
+
+	padding: 0;
+	margin-right: 30px;
+}
+
+.buttonFont {
+	font-size: 80px;
+	position: "relative";
+	margin: -18px 0 0 0;
+	padding: 0;
+	transition: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.buttonFont:hover {
+	transform: scale(1.33);
+}
