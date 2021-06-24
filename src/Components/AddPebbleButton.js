@@ -4,10 +4,6 @@ import { Modal } from "react-bootstrap";
 
 import "./Style/Button.css";
 
-<<<<<<< Updated upstream:src/Components/AddPebble.js
-export default function AddPebble() {
-	return <div>+</div>;
-=======
 export default function AddPebbleButton() {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
@@ -24,5 +20,4 @@ export default function AddPebbleButton() {
 			</Modal>
 		</div>
 	);
->>>>>>> Stashed changes:src/Components/AddPebbleButton.js
 }
