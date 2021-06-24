@@ -4,25 +4,59 @@
 }
 
 .Title {
-	margin-left: auto;
-}
-
-.Menu {
-	margin-left: auto;
+	margin: auto;
 }
 
 .hLine {
 	width: 70%;
 	border-top: 2px solid black;
 	margin: auto;
+	margin-bottom: 50px;
 }
 
 .Container {
 	display: flex;
-	min-height: 600px;
+	flex-wrap: wrap;
+	min-height: 800px;
+	width: 100%;
+	max-width: 110vw;
 }
 .AddPebble {
 	display: flex;
 	margin-top: auto;
 	margin-left: auto;
+}
+
+.pebble {
+	width: 450px;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+}
+.pebbleText {
+	overflow-y: scroll;
+	width: 450px;
+	height: 300px;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 20px;
+	background-color: rgb(255, 255, 250, 0.85);
+}
+
+.pebbleTitle {
+	width: 450px;
+	height: 300px;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 20px;
+	background-color: rgb(255, 255, 250, 0.85);
+}
+
+.pebbleImage {
+	width: 450px;
+	height: 300px;
+	margin: 0;
+	padding: 10px;
 }
