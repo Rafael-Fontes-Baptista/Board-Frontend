@@ -1,9 +1,14 @@
+import { Switch, Route } from "react-router-dom";
+import Portal from "./Pages/Portal";
 import SandBoard from "./Pages/SandBoard";
 
 function App() {
 	return (
 		<div>
-			<SandBoard />
+			<Switch>
+				<Route path="/board" component={SandBoard} />
+				<Route path="/" component={Portal} />
+			</Switch>
 		</div>
 	);
 }
