@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Style/SandBoard.css";
 
 import Title from "../Components/Title";
 import Menu from "../Components/Menu";
 import AddPebbleButton from "../Components/AddPebbleButton";
-import AddPebbleForm from "../Components/AddPebbleForm";
+import axios from "axios";
 
 export default function SandBoard() {
+	const [projects, set_projects] = useState([]);
+
+	useEffect(() => {
+		const getProjects = async () => {
+			const res = await axios.get("http://localhost:4000");
+			set_projects(res.data.projects);
+		};
+		getProjects();
+	}, []);
+
 	return (
 		<>
 			<div className="TopBar">
@@ -19,11 +29,15 @@ export default function SandBoard() {
 			</div>
 			<div className="hLine"></div>
 			<div className="Container">
+				<div>
+					{projects.map((i) => (
+						<li key={i.id}>{i.name}</li>
+					))}
+				</div>
 				<div className="AddPebble">
 					<AddPebbleButton />
 				</div>
 			</div>
-			<AddPebbleForm />
 		</>
 	);
 }
