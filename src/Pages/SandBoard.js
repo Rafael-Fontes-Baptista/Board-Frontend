@@ -47,6 +47,7 @@ export default function SandBoard() {
 								{i.title}
 							</motion.div>
 						) : null}
+
 						{i.text ? (
 							<motion.div
 								drag
