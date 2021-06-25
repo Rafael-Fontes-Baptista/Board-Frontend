@@ -20,28 +20,21 @@
 	min-height: 800px;
 	width: 100%;
 	max-width: 110vw;
+	overflow: hidden;
 }
 .AddPebble {
 	display: flex;
+	z-index: 1;
 	margin-top: auto;
 	margin-left: auto;
 }
 
 .pebble {
+	display: flex;
 	width: 450px;
 	height: 300px;
 	margin: 0;
 	padding: 0;
-}
-.pebbleText {
-	overflow-y: scroll;
-	width: 450px;
-	height: 300px;
-	margin: 0;
-	padding: 10px;
-	border: 1px solid darkgrey;
-	border-radius: 20px;
-	background-color: rgb(255, 255, 250, 0.85);
 }
 
 .pebbleTitle {
@@ -51,7 +44,23 @@
 	padding: 10px;
 	border: 1px solid darkgrey;
 	border-radius: 20px;
-	background-color: rgb(255, 255, 250, 0.85);
+	background-color: rgb(255, 255, 248, 0.85);
+}
+
+.pebbleTitle:active,
+.pebbleTitle:focus {
+	z-index: 1;
+}
+
+.pebbleText {
+	overflow-y: scroll;
+	width: 450px;
+	height: 300px;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 20px;
+	background-color: rgb(255, 255, 248, 0.85);
 }
 
 .pebbleImage {
