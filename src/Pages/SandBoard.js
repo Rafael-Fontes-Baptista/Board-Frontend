@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { motion, useMotionValue } from "framer-motion";
 
 //IMPORT COMPONENTS
 import Title from "../Components/Title";
@@ -14,16 +13,21 @@ import { apiUrl } from "../Config/constants";
 //IMPORT STYLING
 import "./Style/SandBoard.css";
 
+import { motion } from "framer-motion";
+
 export default function SandBoard() {
-	// MOTION LOGIC
 	const constraintsRef = useRef(null);
-	const titleDrag = useMotionValue(0);
 
 	const routeParams = useParams();
 	const projectId = routeParams.id;
 
 	const [pebbles, set_pebbles] = useState([]);
 	const [projectName, set_projectName] = useState("");
+	const [saveBoard, set_saveBoard] = useState(false);
+
+	function saveFunction() {
+		set_saveBoard(!saveBoard);
+	}
 
 	useEffect(() => {
 		const getData = async () => {
@@ -37,56 +41,57 @@ export default function SandBoard() {
 
 	return (
 		<>
-			<div className="TopBar">
-				<div className="Title">
+			<div className="topBar">
+				<div className="title">
 					<Title projectName={projectName} />
 				</div>
 			</div>
-			<div className="hLine"></div>
-			<motion.div className="Container" ref={constraintsRef}>
-				{pebbles.map((i) => (
-					<div className="pebble" key={i.index}>
-						{i.title ? (
-							<motion.div
-								className="pebbleTitle"
-								drag
-								dragConstraints={constraintsRef}
-								style={{ titleDrag }}
-								dragElastic={0.9}
-								dragMomentum={false}
-							>
-								{i.title}
-							</motion.div>
-						) : null}
 
-						{i.text ? (
-							<motion.div
-								className="pebbleText"
-								drag
-								dragConstraints={constraintsRef}
-								dragElastic={0.9}
-								dragMomentum={false}
-							>
-								{i.text}
-							</motion.div>
-						) : null}
+			<div className="hLine"></div>
+			<motion.div className="boardContainer" ref={constraintsRef}>
+				{pebbles.map((i) => (
+					<>
+						<motion.div
+							className="pebble"
+							key={i.id}
+							drag
+							dragConstraints={constraintsRef}
+							dragElastic={0.9}
+							dragMomentum={false}
+						>
+							{i.title ? (
+								<div className="pebbleTitle">
+									<h1 style={{ fontWeight: "bolder" }}>
+										{i.title}
+									</h1>
+								</div>
+							) : null}
+							{i.text ? (
+								<div className="pebbleText">{i.text}</div>
+							) : null}
+						</motion.div>
+
 						{i.imgUrl ? (
 							<motion.img
+								src={i.imgUrl}
+								alt=""
+								className="pebbleImage"
 								drag
 								dragConstraints={constraintsRef}
 								dragElastic={0.9}
 								dragMomentum={false}
-								className="pebbleImage"
-								src={i.imgUrl}
-								alt=""
 							/>
 						) : null}
-					</div>
+					</>
 				))}
-				<div className="AddPebble">
-					<AddPebbleForm />
+
+				<div className="addPebble">
+					{saveBoard ? null : <AddPebbleForm />}
 				</div>
 			</motion.div>
+			<button className="saveButton" onClick={saveFunction}>
+				{saveBoard ? "re-open" : "save"}
+			</button>
 		</>
 	);
 }

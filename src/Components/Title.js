@@ -12,7 +12,7 @@ export default function Title(projectName) {
 			<motion.div
 				className="portal"
 				whileHover={{
-					x: "5%",
+					x: "4%",
 					y: 0,
 					scale: 1.1,
 					rotate: 0,

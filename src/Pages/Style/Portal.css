@@ -1,5 +1,13 @@
-.topBar {
-	display: "flex";
-	justify-content: space-between;
-	color: blue;
+.portalTitle {
+	margin-left: 1%;
+	margin-top: 1vh;
+}
+
+.loginTitle {
+	margin-right: 1%;
+	margin-top: 1vh;
+}
+
+.container {
+	margin-top: 10%;
 }

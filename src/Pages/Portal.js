@@ -7,6 +7,7 @@ import { apiUrl } from "../Config/constants";
 
 // IMPORT STYLING
 import "./Style/Portal.css";
+import { Container } from "react-bootstrap";
 
 // IMPORT COMPONENTS
 import Project from "../Components/Project";
@@ -24,29 +25,20 @@ export default function Portal() {
 
 	return (
 		<>
-			<div style={{ display: "flex", justifyContent: "space-between" }}>
-				<h1
-					style={{
-						marginLeft: "1vw",
-						marginTop: "1vh",
-					}}
-				>
-					portal
-				</h1>
-				<h1
-					style={{
-						marginRight: "1vw",
-						marginTop: "1vh",
-					}}
-				>
-					login
-				</h1>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "space-between",
+				}}
+			>
+				<h1 className="portalTitle">portal</h1>
+				<h1 className="loginTitle">login</h1>
 			</div>
-			<div style={{ height: "80vh" }}>
+			<Container fluid className="container">
 				{projects.map((projects) => (
 					<Project projects={projects} />
 				))}
-			</div>
+			</Container>
 		</>
 	);
 }

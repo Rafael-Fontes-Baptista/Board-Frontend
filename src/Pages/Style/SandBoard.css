@@ -1,71 +1,95 @@
-.TopBar {
+.topBar {
 	display: flex;
 	margin-bottom: 3vh;
 }
 
-.Title {
+.title {
 	margin: auto;
 }
 
 .hLine {
 	width: 70%;
 	border-top: 2px solid black;
-	margin: auto;
-	margin-bottom: 50px;
+	margin: 1% auto 50px auto;
 }
 
-.Container {
+.boardContainer {
 	display: flex;
 	flex-wrap: wrap;
-	height: 85vh;
+	min-height: 75vh;
 	width: 100%;
 	max-width: 110vw;
 	overflow: hidden;
 }
-.AddPebble {
+.addPebble {
 	display: flex;
-	z-index: 1;
+	z-index: 2;
 	margin-top: auto;
 	margin-left: auto;
 }
 
 .pebble {
 	display: flex;
+	flex-direction: column;
 	width: 450px;
 	height: 300px;
-	margin: 0;
-	padding: 0;
-}
-
-.pebbleTitle {
-	width: 450px;
-	height: 300px;
-	margin: 0;
-	padding: 10px;
 	border: 1px solid darkgrey;
 	border-radius: 20px;
-	background-color: rgb(255, 255, 248, 0.85);
+	background-color: rgba(245, 245, 255, 0.9);
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	overflow-y: scroll;
+	margin: 10px;
 }
 
-.pebbleTitle:active,
-.pebbleTitle:focus {
+.pebble::-webkit-scrollbar {
+	display: none;
+}
+
+.pebble:active,
+.pebble:focus {
 	z-index: 1;
 }
 
-.pebbleText {
-	overflow-y: scroll;
-	width: 450px;
-	height: 300px;
-	margin: 0;
+.pebbleTitle {
+	margin: 0 auto 0 auto;
 	padding: 10px;
-	border: 1px solid darkgrey;
-	border-radius: 20px;
-	background-color: rgb(255, 255, 248, 0.85);
+	font-weight: 800;
+}
+
+.pebbleText {
+	padding: 10px;
 }
 
 .pebbleImage {
 	width: 450px;
 	height: 300px;
-	margin: 0;
-	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 20px;
+	object-fit: cover;
+	margin: 10px;
+}
+
+.saveButton {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	font-size: 2rem;
+	margin-left: 46vw;
+	width: 200px;
+	padding: 0 10px 0 10px;
+	margin-bottom: 1%;
+}
+.saveButton:hover {
+	border: 2px;
+	border-style: solid;
+	border-radius: 25px;
+	border-color: rgb(120, 120, 120);
+}
+
+.saveButton:active {
+	border: 2px;
+	border-style: solid;
+	border-radius: 25px;
+	border-color: rgb(120, 120, 120);
 }
