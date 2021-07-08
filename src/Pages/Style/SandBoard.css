@@ -1,6 +1,6 @@
 .TopBar {
 	display: flex;
-	margin-bottom: 50px;
+	margin-bottom: 3vh;
 }
 
 .Title {
@@ -17,7 +17,7 @@
 .Container {
 	display: flex;
 	flex-wrap: wrap;
-	min-height: 800px;
+	height: 85vh;
 	width: 100%;
 	max-width: 110vw;
 	overflow: hidden;

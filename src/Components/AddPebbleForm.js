@@ -1,28 +1,35 @@
+// IMPORT LIBRARIES AND FUNCTIONS
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
+
+//IMPORT CONFIG
 import { apiUrl } from "../Config/constants";
 
+// IMPORT STYLING
 import { Modal } from "react-bootstrap";
-import "./Style/Button.css";
-
-import "./Style/Card.css";
 import { Card, Form, Button } from "react-bootstrap";
+import "./Style/Button.css";
+import "./Style/Card.css";
 
 export default function AddPebbleForm() {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	const routeParams = useParams();
+	const projectId = routeParams.id;
+
 	const [title, set_title] = useState("");
 	const [text, set_text] = useState("");
 	const [imgUrl, set_imgUrl] = useState("");
 
 	async function addPebble(event) {
-		event.preventDefault();
 		await axios.post(`${apiUrl}/board`, {
 			title,
 			text,
 			imgUrl,
+			projectId,
 		});
 		setShow(false);
 	}

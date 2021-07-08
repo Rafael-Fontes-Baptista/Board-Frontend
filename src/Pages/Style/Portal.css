@@ -1,18 +1,5 @@
-a:link,
-a:visited {
-	text-decoration-color: black;
-	color: black;
-	width: fit-content;
-}
-
-a:hover,
-a:active {
-	text-decoration-color: rgb(255, 250, 230);
-	width: fit-content;
-}
-
-.title {
-	margin: auto;
-	width: fit-content;
-	color: black;
+.topBar {
+	display: "flex";
+	justify-content: space-between;
+	color: blue;
 }

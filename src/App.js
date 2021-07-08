@@ -6,7 +6,7 @@ function App() {
 	return (
 		<div>
 			<Switch>
-				<Route path="/board" component={SandBoard} />
+				<Route path="/board/:id" component={SandBoard} />
 				<Route path="/" component={Portal} />
 			</Switch>
 		</div>

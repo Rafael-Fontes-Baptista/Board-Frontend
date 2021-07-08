@@ -1,0 +1,30 @@
+.wrap {
+	display: flex;
+	width: 100vw;
+}
+
+.portal {
+	margin-top: 1vh;
+	margin-left: 1vw;
+	width: fit-content;
+	flex: 1;
+}
+
+.title {
+	margin-top: 2%;
+}
+
+.projectTitle {
+	font-weight: 900;
+	margin-left: auto;
+	display: inline;
+}
+
+.board {
+	font-style: italic;
+	display: inline;
+}
+
+.emptyRight {
+	flex: 1;
+}
