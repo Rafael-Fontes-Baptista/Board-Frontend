@@ -11,3 +11,10 @@
 .container {
 	margin-top: 10%;
 }
+
+.buttonLogout {
+	margin-right: 1%;
+	margin-top: 1vh;
+	border: none;
+	background-color: transparent;
+}

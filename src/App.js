@@ -1,12 +1,14 @@
 import { Switch, Route } from "react-router-dom";
 import Portal from "./Pages/Portal";
 import SandBoard from "./Pages/SandBoard";
+import Login from "./Pages/Login";
 
 function App() {
 	return (
 		<div>
 			<Switch>
 				<Route path="/board/:id" component={SandBoard} />
+				<Route path="/login" component={Login} />
 				<Route path="/" component={Portal} />
 			</Switch>
 		</div>
