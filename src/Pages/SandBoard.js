@@ -2,6 +2,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+//IMPORT REDUX SELECTOR
+import { selectUser } from "../store/user/selectors";
 
 //IMPORT COMPONENTS
 import Title from "../Components/Title";
@@ -24,6 +28,9 @@ export default function SandBoard() {
 	const [pebbles, set_pebbles] = useState([]);
 	const [projectName, set_projectName] = useState("");
 	const [saveBoard, set_saveBoard] = useState(false);
+
+	const user = useSelector(selectUser);
+	console.log(user);
 
 	function saveFunction() {
 		set_saveBoard(!saveBoard);
@@ -89,9 +96,11 @@ export default function SandBoard() {
 					{saveBoard ? null : <AddPebbleForm />}
 				</div>
 			</motion.div>
-			<button className="saveButton" onClick={saveFunction}>
-				{saveBoard ? "re-open" : "lock"}
-			</button>
+			{user.token ? (
+				<button className="saveButton" onClick={saveFunction}>
+					{saveBoard ? "re-open" : "lock"}
+				</button>
+			) : null}
 		</>
 	);
 }
