@@ -2,7 +2,7 @@ My name is Ko Cusveller, student at Codaisseur.
 
 This app is a tool to help companies brainstorm new ideas for projects, and help visualize and organize their work. It is still very much WIP, but if you want to take a sneak peek, you can do so here:
 
-https://cranky-poincare-2a26a6.netlify.app/
+https://beachboard.netlify.app/board
 
 My goal in this app is to create a minimalistic, user friendly design where team members on the same project can interactively move their ideas and thoughts around, as if it was a real life mood board. I call this the Sand Boad. The project manager however will have the authority to close the idea gathering part of the board when the time is right, and move the relevant ideas or references to the next phase, called the Glass board. 
 Here the ideas and references will be organised by theme or topic, and team members can give their feedback on every item, and re-order them if they so desire. After this, the project manager again has the option to close down the comments and re-ordering, and move the relevant items to the next board, the Diamond Board.
