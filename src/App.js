@@ -7,9 +7,9 @@ function App() {
 	return (
 		<div>
 			<Switch>
-				<Route path="/board/:id" component={SandBoard} />
-				<Route path="/login" component={Login} />
 				<Route path="/" component={Portal} />
+				<Route path="/login" component={Login} />
+				<Route path="/board/:id" component={SandBoard} />
 			</Switch>
 		</div>
 	);
