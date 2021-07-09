@@ -90,7 +90,7 @@ export default function SandBoard() {
 				</div>
 			</motion.div>
 			<button className="saveButton" onClick={saveFunction}>
-				{saveBoard ? "re-open" : "save"}
+				{saveBoard ? "re-open" : "lock"}
 			</button>
 		</>
 	);
